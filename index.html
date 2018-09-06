@@ -12,36 +12,60 @@
 </head>
 
 <body>
+        <button id="myBtn">?</button>
+        <div id="myModal" class="modal">
+
+                <!-- Modal content -->
+                <div class="modal-content">
+                  <span class="close">&times;</span>
+                  <p>Click a wand to cast an unforgiving curse. </p>
+                  <br>
+                  <p>The rules are simple.</p>
+                  <br>
+                  <p>The computer will chose a spell at random. You have to defeat it.</p>
+                  <br><br><br>
+                  <p>> Avada Kedavra kills the opponent preventing a Crucio curse.</p>
+                  <br><br>
+                  <p>> Imperio controls the opponent preventing an Avada Kedavra curse.</p>
+                  <br><br>
+                  <p>> Crucio tortures the opponent rendering them incapable of an Imperio curse.</p>
+                  <br><br>
+                  <p>*Can you get 50 wins before 50 loses?*</p>
+
+                </div>
+              
+              </div>
+
     <main>
         <div class="box one">
-           
-            <button class="play rock" type="button" onclick="play('avada-kedavra')"></button>
-            
+            <button class="play avada" type="button" onclick="play('avada-kedavra')"></button>
+
             <p>Avada Kedavra</p>
         </div>
         <div class="box two">
-            <button class="play paper" type="button" onclick="play('imperio')"></button>
+            <button class="play imperio" type="button" onclick="play('imperio')"></button>
             </a>
             <p>Imperio</p>
         </div>
         <div class="box three">
-                <button class="play scissors" type="button" onclick="play('crucio')"></button>
+            <button class="play crucio" type="button" onclick="play('crucio')"></button>
             <p>Crucio</p>
         </div>
     </main>
+    <div class="results">
     <div style="clear:both;"></div>
-                <p><span id="player"></span> <span id="opponent"></span></p>
-                <h2 id="results"></h2>
-            </section>
-            <aside class="aside">
-                <div class="scorebox">
-                    <h2>Score</h2>
-                    <div class="score-num"><span id="wins">0</span> <br />wins</div>
-                    <div class="score-divider"><span>-</span></div>
-                    <div class="score-num"><span id="loses">0</span> <br />loses</div>
-                </div>
-                <button type="reset" id="reset" onclick="reset()">reset scores</button>
-            </aside>
+    <p class="comment"><span id="player"></span> <span id="opponent"></span></p>
+
+    </section>
+    </div>
+   
+        <div class="scorebox">
+            <div class="score-num"><span id="wins">0</span> <br />wins</div>
+            <div class="score-divider"><span>-</span></div>
+            <div class="score-num"><span id="loses">0</span> <br />loses</div>
+        </div>
+        <button type="reset" id="reset" onclick="reset()">reset scores</button>
+   
     <script src="app.js"></script>
 </body>
 

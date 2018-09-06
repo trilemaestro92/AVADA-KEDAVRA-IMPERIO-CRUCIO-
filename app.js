@@ -5,13 +5,11 @@ var play = function (userChoice) {
 
     document.getElementById("player").innerHTML = "";
     document.getElementById("opponent").innerHTML = "";
-    document.getElementById("results").innerHTML = "";
 
 
     if (userChoice == "avada-kedavra" || userChoice == "imperio" || userChoice == "crucio") {
         document.getElementById("player").innerHTML = 'You cast' + ' ' + userChoice + '.';
-    } else if (userChoice == "rope") {
-        document.getElementById("player").innerHTML = 'You chose' + ' ' + userChoice + '. <br />Well aren\'t you a smarty pants.';
+    
     } else {
         document.getElementById("player").innerHTML = "That is not a valid choice, try again.";
 
@@ -27,57 +25,50 @@ var play = function (userChoice) {
         computerChoice = "crucio";
     }
 
-    document.getElementById("opponent").innerHTML = '// The computer chose' + ' ' + computerChoice + '.';
+    document.getElementById("opponent").innerHTML = 'The computer chose' + ' ' + computerChoice + '.';
 
     var compare = function (choice1, choice2) {
         if (choice1 == choice2) {
-            return "The result is a tie!";
+
         } else if (choice1 == "avada-kedavra") {
             if (choice2 == "crucio") {
                 wins++;
-                return "Avada wins.";
+
             } else {
                 loses++;
-                return "sorry. Imperio wins.";
+
             }
         } else if (choice1 == "imperio") {
             if (choice2 == "avada-kedavra") {
                 wins++;
-                return "Imperio wins";
+
             } else {
                 loses++;
-                return "sorry. Crucio win.";
+
             }
         } else if (choice1 == "crucio") {
             if (choice2 == "avada-kedavra") {
                 loses++;
-                return "sorry. Avada-Kedavra wins";
+
             } else {
                 wins++;
-                return "Crucio win";
+
             }
-        } else if (choice1 == "rope") {
-            wins++;
-            return "rope FTW";
+
         } else {
             return "error. bummer dude. game over. no dice.";
         }
     };
 
     var winner = compare(userChoice, computerChoice);
-    document.getElementById("results").innerHTML = winner;
     document.getElementById("wins").innerHTML = wins;
     document.getElementById("loses").innerHTML = loses;
 
-    if (wins > 99 || loses > 99) {
-        document.getElementById("wins").style.fontSize = "44";
-        document.getElementById("loses").style.fontSize = "44";
+    if (wins > 50) {
+        alert("You reached the max score of 100. Congratulations, you're officially a wizard.");
     }
-    if (wins > 999) {
-        alert("You reached the max score of 999. <br />Congratulations, you have no life.");
-    }
-    if (loses > 999) {
-        alert("Your opponent reached the max score of 999. <br />We're sorry, you have no life.");
+    if (loses > 50) {
+        alert("Your opponent reached the max score of 100. We're sorry, you might be a Muggle.");
     }
 };
 
@@ -87,3 +78,31 @@ var reset = function () {
     document.getElementById("wins").innerHTML = wins;
     document.getElementById("loses").innerHTML = loses;
 };
+
+
+
+// Get the modal
+var modal = document.getElementById('myModal');
+
+// Get the button that opens the modal
+var btn = document.getElementById("myBtn");
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks the button, open the modal 
+btn.onclick = function() {
+    modal.style.display = "block";
+}
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+    modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
