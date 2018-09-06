@@ -64,11 +64,11 @@ var play = function (userChoice) {
     document.getElementById("wins").innerHTML = wins;
     document.getElementById("loses").innerHTML = loses;
 
-    if (wins > 50) {
-        alert("You reached the max score of 100. Congratulations, you're officially a wizard.");
+    if (wins >= 50) {
+        alert("You reached the max score of 50. Congratulations, you're officially a wizard.");
     }
-    if (loses > 50) {
-        alert("Your opponent reached the max score of 100. We're sorry, you might be a Muggle.");
+    if (loses >= 50) {
+        alert("Your opponent reached the max score of 50. We're sorry, you might be a Muggle.");
     }
 };
 
