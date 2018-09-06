@@ -14,24 +14,34 @@
 <body>
     <main>
         <div class="box one">
-            <a href="#">
-                <img class="avada-k img" src="img/wand1.png">
-            </a>
+           
+            <button class="play rock" type="button" onclick="play('avada-kedavra')"></button>
+            
             <p>Avada Kedavra</p>
         </div>
         <div class="box two">
-            <a href="#">
-                <img class="imperio img" src="img/wand2.png" />
+            <button class="play paper" type="button" onclick="play('imperio')"></button>
             </a>
             <p>Imperio</p>
         </div>
         <div class="box three">
-            <a href="#">
-                <img class="crucio img" src="img/wand3.png" />
-            </a>
+                <button class="play scissors" type="button" onclick="play('crucio')"></button>
             <p>Crucio</p>
         </div>
     </main>
+    <div style="clear:both;"></div>
+                <p><span id="player"></span> <span id="opponent"></span></p>
+                <h2 id="results"></h2>
+            </section>
+            <aside class="aside">
+                <div class="scorebox">
+                    <h2>Score</h2>
+                    <div class="score-num"><span id="wins">0</span> <br />wins</div>
+                    <div class="score-divider"><span>-</span></div>
+                    <div class="score-num"><span id="loses">0</span> <br />loses</div>
+                </div>
+                <button type="reset" id="reset" onclick="reset()">reset scores</button>
+            </aside>
     <script src="app.js"></script>
 </body>
 
