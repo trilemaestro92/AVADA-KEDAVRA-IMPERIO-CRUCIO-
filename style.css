@@ -1,0 +1,46 @@
+body {
+    background-color: rgb(245, 237, 227);
+}
+
+main{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-template-rows: repeat(2, 1fr); 
+    padding: 150px 140px 140px 140px;
+    grid-gap: 25px;
+    
+    
+}
+
+
+p {
+    font-family: sans-serif;
+    text-align: center;
+    
+}
+
+.img {
+    height: 250px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+
+.avada-k {
+    grid-row: 1;
+    grid-column: 1;
+}
+
+.imperio {
+    grid-row: 1;
+    grid-column: 2;
+}
+.crucio {
+    grid-row: 1;
+    grid-column: 3;
+}
+
+
+
